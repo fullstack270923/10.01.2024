@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>functions</title>
+</head>
+
+<body>
+    <script>
+
+        function btnClick() {
+            console.log('hello');
+        }
+        btnClick()
+
+        function print_card(card) {
+            switch (card) {
+                case 1: document.write('rock')
+                    break;
+                case 2: document.write('paper')
+                    break;
+                case 3: document.write('scissors')
+                    break;
+                default:
+                    document.write('illegal')
+                    break;
+            }
+        }
+
+        function get_random(lower, upper) {
+            // 1 - 3
+            // 0 1 2
+            // Math.random() * 3
+            // 0 .. 2.99999 
+            // parseInt => 0 1 2
+            // 0 1 2 + lower ==> 1, 2, 3
+            const rand = parseInt(Math.random() * (upper - lower + 1)) + lower
+            return rand
+        }
+
+        const player = parseInt(prompt('1=rock 2=paper 3=scissors'))
+        print_card(player)
+        const computer = parseInt(get_random(1, 3)) 
+        print_card(computer)
+
+        // **BONUS:
+        // function executor( f ) {
+        //     f() // btnClick()
+        // }
+        // executor ( btnClick )
+
+    </script>
+</body>
+
+</html>
